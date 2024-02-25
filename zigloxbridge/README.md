@@ -1,4 +1,7 @@
-# sweethome-distro
+# ZigLoxBridge 
+
+It is in the initialization phase. It will be available soon.
+
 We have a very useful news for you!
 
 Our plugin **ZigLoxBridge** plugin as a sophisticated plugin, seamlessly connecting Zigbee2mqtt and the Loxone Miniserver. With its advanced capabilities, it orchestrates the transmission of messages between these systems flawlessly. This plugin enhances integration between Zigbee2mqtt and the Loxone Miniserver, ensuring smooth communication and maximizing functionality for users.
