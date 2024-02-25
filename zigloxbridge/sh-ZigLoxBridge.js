@@ -1,9 +1,20 @@
 const dgram = require('dgram');
 const mqtt = require('mqtt');
 
+
+// Configuration
+const udpPort = 1234; // UDP port to listen on
+const mqttBroker = 'mqtt://your-mqtt-broker'; // MQTT broker URL
+const mqttTopic = 'loxone'; // MQTT topic to publish messages
+
+// MQTT broker setup
+// Replace with your MQTT broker URL
+  
+const mqttBrokerUrl = 'mqtt://mqtt.example.com'; 
+const mqttClient = mqtt.connect(mqttBrokerUrl);
+
 // UDP server setup
 const udpServer = dgram.createSocket('udp4');
-const udpPort = 12345; // Choose your desired UDP port
 
 udpServer.on('error', (err) => {
   console.log(`UDP server error:\n${err.stack}`);
@@ -12,11 +23,7 @@ udpServer.on('error', (err) => {
 
 udpServer.on('message', (msg, rinfo) => {
   console.log(`Received UDP message from ${rinfo.address}:${rinfo.port}: ${msg}`);
-
-  // MQTT broker setup
-  const mqttBrokerUrl = 'mqtt://mqtt.example.com'; // Replace with your MQTT broker URL
-  const mqttClient = mqtt.connect(mqttBrokerUrl);
-
+  
   mqttClient.on('connect', () => {
     console.log('Connected to MQTT broker');
 
